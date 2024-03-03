@@ -1,0 +1,34 @@
+<div class="bs-container">
+  <div class="title-container">
+    <div class="title">
+      <i class="fas fa-balance-scale bs-icon"></i>
+      <h2>Balanced Sub_Strings</h2>
+    </div>
+  </div>
+  <div class="bs">
+    <label class="bs-label" for="position">Enter string:</label>
+    <input
+      class="bs-input"
+      name="text"
+      placeholder="Enter the text"
+      type="text"
+      id="inputString"
+      (input)="onStringChange()"
+      [(ngModel)]="stringValue"
+    />
+    <div class="bs-result">
+      <p
+        [style.visibility]="showResult && result.length ? 'visible' : 'hidden'"
+      >
+        <span class="string-result">Result: </span>
+        <span>{{ getJoinedResult() }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="calculate-btn-container">
+    <button class="cancel-btn" (click)="onClear()">Clear</button>
+    <button class="calculate-btn" (click)="findBalancedSubstrings()">
+      Find Balanced Substrings
+    </button>
+  </div>
+</div>

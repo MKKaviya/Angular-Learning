@@ -1,0 +1,87 @@
+.recursive-container {
+  padding: 20px;
+  margin-right: 12px;
+  width: 720px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  .title-container {
+    padding: 12px 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      .recursive-icon {
+        font-size: 28px;
+        color: #95a5a6;
+      }
+      h2 {
+        margin-left: 12px;
+      }
+    }
+  }
+  .recursive {
+    padding: 60px 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #d6dbdf;
+    text-align: center;
+    cursor: pointer;
+    .recursive-label {
+      padding-bottom: 12px;
+      margin-right: 20px;
+    }
+    .recursive-input {
+      border-radius: 4px;
+      padding: 10px;
+      width: 280px;
+      outline: none;
+      border: none;
+      font-size: 16px;
+    }
+    .recursive-result {
+      margin-top: 20px;
+    }
+  }
+  .file-container {
+    .file-content-container {
+      font-family: "Zilla Slab", serif;
+      font-weight: 500;
+      font-style: normal;
+      h4 {
+        margin: 20px 0;
+      }
+    }
+  }
+  .calculate-btn-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      width: 50%;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cancel-btn {
+      margin-right: 20px;
+    }
+    .calculate-btn {
+      background-color: #3498db;
+      color: #fff;
+    }
+  }
+}

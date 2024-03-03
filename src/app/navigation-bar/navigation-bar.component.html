@@ -1,0 +1,9 @@
+<nav class="nav-bar">
+  <li
+    *ngFor="let item of navItems"
+    class="navbar-item"
+    (click)="onNavigate(item.url)"
+  >
+    {{ item.name }}
+  </li>
+</nav>

@@ -1,0 +1,33 @@
+<div class="recursive-container">
+  <div class="title-container">
+    <div class="title">
+      <i class="fas fa-signature recursive-icon"></i>
+      <h2>RECURSIVE</h2>
+    </div>
+  </div>
+  <div class="recursive">
+    <label class="recursive-label" for="position">Enter position:</label>
+    <input
+      class="recursive-input"
+      name="text"
+      placeholder="Enter the Number"
+      type="number"
+      id="position"
+      (input)="onPositionChange()"
+      [(ngModel)]="position"
+    />
+    <div class="recursive-result">
+      <p [style.visibility]="showResult ? 'visible' : 'hidden'">
+        Fibonacci value at position {{ position }} is: {{ result }}
+      </p>
+    </div>
+  </div>
+  <div class="file-container">
+    <div class="calculate-btn-container">
+      <button class="cancel-btn" (click)="onClear()">Clear</button>
+      <button class="calculate-btn" (click)="calculateFibonacci()">
+        Calculate
+      </button>
+    </div>
+  </div>
+</div>

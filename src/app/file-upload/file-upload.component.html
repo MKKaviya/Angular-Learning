@@ -1,0 +1,62 @@
+<div class="file-upload-container">
+  <div class="title-container">
+    <div class="title">
+      <i class="fas fa-cloud-upload-alt upload-icon"></i>
+      <h2>Upload Images</h2>
+    </div>
+    <p>Attachments that have been uploaded as part of this project.</p>
+  </div>
+  <div class="file-upload">
+    <input
+      type="file"
+      id="upload"
+      #fileInput
+      multiple
+      accept="image/*"
+      (change)="onFilesSelected($event)"
+    />
+    <label for="upload" class="browse"
+      >Choose Images <i class="fas fa-paperclip pin"></i
+    ></label>
+  </div>
+  <div class="file-container">
+    <div class="file-content-container" *ngIf="files.length !== 0">
+      <h4>Uploaded Images</h4>
+      <div class="file-wrapper" *ngFor="let file of files; let i = index">
+        <div class="file">
+          <div class="file-details">
+            <div class="file-preview">
+              <img
+                [src]="previews[i]"
+                [alt]="file.name"
+                class="image-preview"
+              />
+            </div>
+            <div class="file-name">
+              <p class="name">{{ file.name }}</p>
+              <p class="file-size">{{ getFileSize(file) }}</p>
+            </div>
+          </div>
+          <div class="close-file" (click)="onDelete(i)">
+            <i class="fas fa-times-circle"></i>
+          </div>
+        </div>
+        <mat-progress-bar
+          class="progress"
+          mode="determinate"
+          [value]="uploadProgress[i]"
+        ></mat-progress-bar>
+      </div>
+    </div>
+    <div class="upload-btn-container">
+      <button class="cancel-btn" (click)="goBack()">Back</button>
+      <button
+        [ngClass]="files.length === 0 ? 'upload-btn disabled' : 'upload-btn'"
+        [disabled]="files.length === 0"
+        (click)="uploadImages()"
+      >
+        Upload
+      </button>
+    </div>
+  </div>
+</div>
